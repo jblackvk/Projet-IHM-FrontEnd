@@ -1,0 +1,42 @@
+<div style="background-color: #edf1f2; background-size: cover; min-height: 800px ;height: 100%">
+  <!--page de recherche-->
+
+  <div id="container" class="container-fluid" style="text-align: center; margin-bottom: 40px; " >
+    <div id="searchbox" class="container-fluid" style="border-color: darkblue; text-align: center; display: inline-block; margin-top: 15px;">
+      <div style="display: inline-block; " >
+        <div class="row inline " >
+          <div class="ordered">
+            <img src="../../assets/Pedago.ico" >
+            <div class="input-group mb-3" id ="group" >
+              <input type="text"  [(ngModel)]="texte" (keyup.enter)="valide()" class="form-control" id="input"  placeholder="Rechercher" aria-label="Recipient's username" aria-describedby="button">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-secondary aqua-gradient btn-lg " id="button" (click)="valide()" >Search</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-left: 100px; alignment: right">
+            <select id="lang" name="Langue" class="btn btn-success" (change)="changeLangue($event)" [(ngModel)]="lang" >
+              <option value="" disabled>Choisissez une Langue</option>
+              <option *ngFor="let l of language" [ngValue]="l.value" [selected]="l.selected">{{l.name}}</option>
+            </select>
+
+          </div>
+        </div>
+        <div id="buttons" style="min-height: 800px; alignment: center; text-align: justify-all;  display: none "  >
+          <div class="btn-group" >
+            <button class="btn btn-secondary" style="color: #808040; margin-right: 30px; -webkit-text-fill-color: aliceblue">Precedent</button>
+            <button class="btn btn-secondary" style="color: #808090; margin-left: 30px; -webkit-text-fill-color: aliceblue">Suivant</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid"  >
+    <div id="result" class="container-fluid">
+      <app-article *ngFor="let obj of items" [Title]="obj.title" [Lien]="obj.link" [Texte]="obj.snippet" [Site]="obj.displayLink"></app-article>
+    </div>
+  </div>
+
+</div>

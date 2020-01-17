@@ -1,0 +1,26 @@
+<div class="container " >
+  <div class="row justify-content-center align-content-center" style="margin: 100px">
+    <!--id="logo"-->
+    <img src="../../assets/ihm3 up.png"  />
+  </div>
+  <div class="row justify-content-center align-content-center">
+    <div class="col-md-7 col-10">
+
+      <div class="input-group form-sm form-1 pl-0">
+        <div class="input-group-prepend">
+          <span class="input-group-text white" id="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+        </div>
+        <input class="form-control my-0 py-2" [(ngModel)]="texte"  (keyup.enter)="valide();"  id="search-input" type="text" placeholder="Search" aria-label="Search">
+
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <!--id="bouton"-->
+    <div class="">
+      <a class="btn btn-secondary aqua-gradient btn-lg btn-block my-5" routerLink="search" (click)="valide()" type="submit"> GO </a>
+    </div>
+
+  </div>
+
+</div>
