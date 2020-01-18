@@ -26,11 +26,5 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     Scraper(this.Lien, this.Texte);
-  } 
-
-  
-  
-  
-
-
+  }
 }

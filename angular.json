@@ -28,12 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-<<<<<<< HEAD
               "assets/Scraper.js"
-=======
-              "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/custom.js"
->>>>>>> iy_h
             ]
           },
           "configurations": {
