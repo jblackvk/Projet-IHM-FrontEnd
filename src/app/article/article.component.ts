@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-declare var Scraper: any;
+declare var Scraper;
 
 
 @Component({
@@ -25,13 +25,11 @@ export class ArticleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
-    Scraper(this.Lien);
-  
-  }
 
+  } 
+  
   Scraping(){
-    this.contenu = Scraper(this.Lien);
+    Scraper(this.Lien, this.Texte);
   }
 
   

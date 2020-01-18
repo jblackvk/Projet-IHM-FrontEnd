@@ -40,7 +40,7 @@ export class SearchPageComponent implements OnInit {
     // for (let i = 1; i <= 41; i = i + 10) {
     const xhttp = new XMLHttpRequest();
     const url = 'https:\/\/www.googleapis.com\/customsearch\/v1' +
-      '?key=' + 'AIzaSyDNPE2XSDpnN1UfyHTRi1YpY46y5Y1kP8k' + '&cx=' + '015932702286198262888:gltcuj44bjw' + '&q=' + this.texte +
+      '?key=' + 'AIzaSyC5pTd8eKkTta72Q6L71-JGOxywsxjoRNw' + '&cx=' + '012208273607834236446:j9rajflm42w' + '&q=' + this.texte +
       '&lr=' + this.lang + '&filetype:html';
     xhttp.onreadystatechange = () => {
       if (xhttp.readyState === 4 && xhttp.status === 200) {
