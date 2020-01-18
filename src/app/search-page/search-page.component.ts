@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from '../service/data.service';
 
 @Component({
@@ -18,8 +18,11 @@ export class SearchPageComponent implements OnInit {
   vue = false;
   btn = document.getElementById('buttons');
   body = document.getElementsByTagName('body');
+  jresp = [];
+  url = [];
 
-  language ;
+  language;
+
   constructor(private texteService: DataService) {
     this.texte = this.texteService.texte;
     this.language = this.texteService.language;
@@ -32,23 +35,29 @@ export class SearchPageComponent implements OnInit {
     this.lang = e.target.value.substring(3, e.target.value.length);
     console.log(this.lang);
   }
+
   valide() {
+    // for (let i = 1; i <= 41; i = i + 10) {
     const xhttp = new XMLHttpRequest();
     const url = 'https:\/\/www.googleapis.com\/customsearch\/v1' +
-      '?key=AIzaSyBlj6rJpK5Tg3wI-9tKNYjjIRf82_d5MIo&cx=015932702286198262888:en5lee8zbfd&q=' + this.texte +
+      '?key=' + 'AIzaSyDNPE2XSDpnN1UfyHTRi1YpY46y5Y1kP8k' + '&cx=' + '015932702286198262888:gltcuj44bjw' + '&q=' + this.texte +
       '&lr=' + this.lang + '&filetype:html';
     xhttp.onreadystatechange = () => {
       if (xhttp.readyState === 4 && xhttp.status === 200) {
         console.log('envoie de la requette');
         this.reponse = JSON.parse(xhttp.responseText);
         this.items = this.reponse.items;
-
-        console.log('reponse recu');
-        console.log('fin affichage composant');
+        for (const j of this.items) {
+          // @ts-ignore
+          this.url.push(j.link);
+        }
       }
     };
     xhttp.open('GET', url, true);
     xhttp.send();
+    // }
+    console.log(this.jresp);
+    console.log(this.url);
   }
 
   ngOnInit() {
