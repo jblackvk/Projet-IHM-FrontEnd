@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+declare var Scraper: any;
+
+
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -16,9 +19,24 @@ export class ArticleComponent implements OnInit {
   Texte: string;
   @Input()
   Site
+
+  public contenu; texte;
+
   constructor() { }
 
   ngOnInit() {
+    
+    Scraper(this.Lien);
+  
   }
+
+  Scraping(){
+    this.contenu = Scraper(this.Lien);
+  }
+
+  
+  
+  
+
 
 }

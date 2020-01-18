@@ -35,7 +35,7 @@ export class SearchPageComponent implements OnInit {
   valide() {
     const xhttp = new XMLHttpRequest();
     const url = 'https:\/\/www.googleapis.com\/customsearch\/v1' +
-      '?key=AIzaSyBlj6rJpK5Tg3wI-9tKNYjjIRf82_d5MIo&cx=015932702286198262888:en5lee8zbfd&q=' + this.texte +
+      '?key=AIzaSyBlj6rJpK5Tg3wI-9tKNYjjIRf82_d5MIo&cx=005418560236931610358:hnaovntqyj0&q=' + this.texte +
       '&lr=' + this.lang + '&filetype:html';
     xhttp.onreadystatechange = () => {
       if (xhttp.readyState === 4 && xhttp.status === 200) {
