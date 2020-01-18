@@ -21,9 +21,14 @@
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.4.1",
     "cheerio": "^1.0.0-rc.3",
+<<<<<<< HEAD
     "puppeteer": "^2.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
+=======
+    "jquery": "^3.4.1",
+    "request": "^2.88.0",
+>>>>>>> iy_h
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
