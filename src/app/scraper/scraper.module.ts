@@ -1,15 +1,23 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import * as rp from 'request-promise';
+import * as $ from 'cheerio';
 
-function Scraper (lien, texte) {
+
+
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
+})
+export class ScraperModule {
+
+
+  Scraper (lien, texte) {
 
     console.log('1')
-
-    import * as rp from 'request-promise';
-    import * as $ from 'cheerio';
-
     let contenu;
-
-    
-
     rp(lien)
       .then(function(html){
         //success!
@@ -37,3 +45,5 @@ function Scraper (lien, texte) {
 
       return contenu;
   }
+
+ }
