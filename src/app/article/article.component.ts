@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ScraperModule} from '../scraper/scraper.module';
-
-declare var Scraper;
+import { DataService } from '../data.service';
 
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.css'],
+  providers: [DataService],
 })
 export class ArticleComponent implements OnInit {
 
@@ -21,15 +21,23 @@ export class ArticleComponent implements OnInit {
   @Input()
   Site
 
-  public contenu; texte;
+  public Data;
 
-  constructor(private scrap: ScraperModule) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.Scraping();
+    this.Data = {
+      url: this.Lien,
+      text: this.Texte
+    }
+
+    this.dataService.SendData(this.Data).subscribe(
+      response => {
+        alert('envoir réussi')
+      },
+      error => console.log('error', error)
+    );
   }
 
-  Scraping(){
-    this.scrap.Scraper(this.Lien, this.Texte);
-  }
+
 }
