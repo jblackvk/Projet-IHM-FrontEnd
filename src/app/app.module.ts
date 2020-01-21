@@ -8,7 +8,10 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import {FormsModule} from '@angular/forms';
 import {DataService} from './service/data.service';
+import {DataServices} from './data.service';
 import { ArticleComponent } from './article/article.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoute: Routes = [
   {path: 'acceuil', component: AcceuilComponent},
@@ -27,10 +30,14 @@ const appRoute: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     DataService,
+    DataServices,
+    HttpClient,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

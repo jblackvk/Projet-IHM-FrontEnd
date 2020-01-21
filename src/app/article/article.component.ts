@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../data.service';
+import { DataServices } from '../data.service';
 
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css'],
-  providers: [DataService],
+  providers: [DataServices],
 })
 export class ArticleComponent implements OnInit {
 
@@ -20,16 +20,17 @@ export class ArticleComponent implements OnInit {
   @Input()
   Site
 
-  public Data;
+  public Data 
 
-  constructor(private dataService: DataService) {}
-
-  ngOnInit() {
+  constructor(private dataService: DataServices) {
     this.Data = {
       url: this.Lien,
       text: this.Texte
     }
+  }
 
+  ngOnInit() {
+    console.log(this.Data)
     this.dataService.SendData(this.Data).subscribe(
       response => {
         alert('envoir réussi')
@@ -37,6 +38,5 @@ export class ArticleComponent implements OnInit {
       error => console.log('error', error)
     );
   }
-
-
 }
+
