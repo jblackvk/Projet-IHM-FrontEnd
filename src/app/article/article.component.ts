@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ScraperModule} from '../scraper/scraper.module';
 import { DataService } from '../data.service';
 
 
