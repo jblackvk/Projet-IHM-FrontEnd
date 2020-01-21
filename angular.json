@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "assets/Scraper.js"
+              "src/assets/Scraper.js"
             ]
           },
           "configurations": {
