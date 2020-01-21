@@ -1,0 +1,80 @@
+img{
+   
+  width: 40%;
+  height:90%;
+  
+}
+.ordered{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.langue{
+  margin-left: 100px;
+  
+}
+#result{
+ margin-bottom: 40px; 
+  background-color: #edf1f2; 
+  background-size: cover; 
+  min-height: 800px ;
+  height: 100%;
+}
+#container{
+  background-color: #edf1f2; 
+  background-size: cover; 
+  border-bottom :  rgba(1, 129, 108, 0.74);
+}
+nav{
+  background-color: #edf1f2; 
+  background-size: cover;
+}
+hr{
+  height:1px;
+  color: rgba(1, 129, 108, 0.74);
+}
+input:focus{
+  box-shadow: none;
+}
+input{
+  box-shadow: rgba(1, 129, 108, 0.74);
+  border-radius:0px 30px 30px 0px;
+  width: 50px;
+  border-right: none;
+}
+#lang{
+  background-color: rgba(1, 129, 108, 0.74);
+
+}
+#searchButton{
+  /*background-color:rgba(1, 129, 108, 0.74);*/
+  border-radius: 0px 30px 30px 0px;
+  color: white;
+  border-left:none;
+  font-weight: bold;
+
+}
+
+#searchInput{
+   box-shadow: rgba(1, 129, 108, 0.74);
+   border-radius:30px 0px 0px 30px;
+   width: 50px;
+   border-right: none;
+}
+#icon {
+ 
+  animation: rotating 4s infinite;
+
+}
+#icon:hover{
+  animation-play-state: paused;
+  }
+
+@keyframes rotating {
+  from{
+      -webkit-transform: rotateY(0deg);
+  }
+  to{
+      -webkit-transform: rotateY(360deg);
+  }
+}

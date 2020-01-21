@@ -1,0 +1,17 @@
+#resultat:hover{
+  border: 2px solid rgb(144, 176, 169);
+  border-radius: 10px;
+  margin-top: 10px ;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#resultat{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#titre{
+  margin-bottom: unset;
+  color: darkblue;
+}
